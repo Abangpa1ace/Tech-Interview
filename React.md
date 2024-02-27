@@ -1,5 +1,9 @@
 # React
-## JSX(Javascript eXtension)
+[JSX](#JSX)<br />
+[Virtual Dom](#Virtual-Dom)<br />
+<br />
+
+## JSX
 JSX(Javascript eXtension) 은 자바스크립트의 확장문법이다. React는 HTML 요소를 표현하기 위해 JSX를 사용한다.<br />
 마크업 언어처럼 보이나, 말 그대로 JSX는 Javascript 다. (Build 시, Babel에 의해 JS로 변환됨) 기본적으론 마크업 문법으로 작성할 수 있으며, 추가적인 문법이나 반드시 준수해야 할 주의점이 있다!<br />
 - 반드시 하나의 부모 태그로 감싸준다. (태그로 특정할 필요가 없다면 빈 태그도 가능)
@@ -16,6 +20,7 @@ Virtual DOM은 DOM을 추상화한 가벼운 복사본으로, 메모리엔 저�
 
 이전의 전체 리렌더하는 방식에 비해 브라우저의 연산량을 줄여 페이지 로드를 최적화할 수 있다.<br />
 [https://velog.io/@sbinha/React에서-Virtual-DOM](https://velog.io/@sbinha/React%EC%97%90%EC%84%9C-Virtual-DOM)
+
 <br />
 
 ## key 사용이유
