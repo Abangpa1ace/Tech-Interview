@@ -1,6 +1,8 @@
 # Javascript
+[Javascript 엔진](#Javascript-엔진)<br />
+[Prototype](#Prototype)<br />
 
-## Javascript Engine
+## Javascript 엔진
 자바스크립트 엔진은 자바스크립트 코드를 해석하고 실행하는 인터프리터이다. 브라우저마다 다른 엔진을 사용한다.
 - `V8` : 크롬, Node.js
 - `SpiderMonkey` : 파이어폭스
