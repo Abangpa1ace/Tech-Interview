@@ -3,6 +3,8 @@
 [Javascript 엔진](#Javascript-엔진)<br />
 [Prototype](#Prototype)<br />
 [Arrow Function(화살표 함수)](#Arrow-Function(화살표-함수))<br />
+[Closure(클로저)](#Closure(클로저))<br />
+[this 바인딩](#this-바인딩)<br />
 <br />
 
 ## Hoisting
@@ -132,3 +134,120 @@ Arrow Function은 ES6에 새로 추가된 문법으로, 비교적 간단하게 �
 - 객체의 메서드로 사용할 경우, this가 객체를 바인딩하지 않고 사용 스코프의 상위를 바인딩하기 때문에 적절하지 않다.
 - 이벤트 리스너의 콜백함수로 사용하면 this가 상위 컨텍스트(window)를 가리킴
 - 생성자 함수로 사용할 수 없다. (prototype 이 없음)
+<br />
+
+## Closure(클로저)
+클로저는 함수가 선언될 때 속한 렉시컬 스코프(Lexical Environment)를 기억하여, 스코프 밖에서 실행될 때도 이 스코프에 접근할 수 있게 해주는 기능이다.
+```
+function sayHello () {
+  const a = 'Hello';
+  const b = 'World';
+  
+  function sumString () {
+    console.log(a + ' ' + b);
+  }
+  
+  return sumString;
+}
+
+const myFunc = sayHello();
+
+myFunc(); // 'Hello World'
+```
+외부함수(sayHello) 실행이 끝나고 소멸된 후에도, 내부함수(sumString)가 외부함수 변수(렉시컬 환경)에 접근 가능하다는 예시코드다.
+
+### Closure 사용하는 이유
+1. 상태 유지 (debounce 함수에서 timer를 기억 등)
+2. 정보 은닉 (변수값을 렉시컬 스코프에 은닉시키고, private 메서드를 모방할 수 있음)
+3. 전역 변수 사용 억제
+
+### Closure 주의점
+메모리 측면에서 손해(내부함수가 외부함수를 참조중이어서, GC로 메모리가 해제되지 않음) => 클로저를 할당한 변수에 null을 할당하여 해제
+<br />
+
+## This 바인딩
+### 기본 바인딩
+자바스크립트는 기본적으로 전역객체에 컨텍스트가 바인딩된다. (global, window) 하지만, strict mode 에서는 undefined이다.
+
+### 암시적 바인딩
+함수 호출시 객체의 프로퍼티로 접근해서 실행하는 암시적 바인딩이다. 기본적으로 해당 객체에 바인딩되나, 전역에 레퍼런스를 저장하는 순간 전역 scope를 참조하게 된다
+
+```
+function hello() {
+  console.log(this.name)
+}
+
+var obj = {
+  name: "chris",
+  hello: hello,
+}
+
+obj.hello() // 'chris'
+```
+
+### 명시적 바인딩
+직관적으로 객체를 컨텍스트에 바인딩하는 방법이다. 자바스크립트의 call(), apply(), bind() 내장함수들이 다음 역할을 수행한다. (빈 객체를 넘기는 경우, 자동적으로 전역에 바인딩된다)
+
+- **call(), apply()**
+
+```
+function hello() {
+  console.log(this.name)
+}
+
+var obj = {
+  name: "chris",
+}
+
+name = "global context!"
+hello.call(obj) // "chris"
+```
+
+apply() 도 call() 과 같이 함수호출에 제공되는 this 값을 첫 번째 인자로 전달한다. 차이점은 두 번째 매개변수부터 call() 은 각각, apply() 는 배열로 받는다는 차이점이다.
+
+- **bind()**
+
+```
+function hello() {
+  console.log(this.name)
+}
+
+var obj = {
+  name: "chris",
+}
+
+setTimeout(obj.hello.bind(obj), 1000) // 1초 후에 hello 함수가 동작하면 this는?
+
+name = "global context!"
+```
+
+bind()는 함수를 정의할 때, 컨텍스트를 바인딩한다. (하드 바인딩) 즉, call(), apply() 처럼 함수를 실행하는 기능이 아닌, 미리 바인딩하는 목적이 있는 것이다.
+
+### New 바인딩
+
+```
+function Person(name) {
+  this.name = name
+}
+Person.prototype.hello() {
+  console.log(this.name)
+}
+
+var obj = new Person('chris');
+obj.hello(); // "chris"
+```
+
+함수를 new 키워드로 호출하면, 새로운 객체(프로토타입)를 반환하여 이것이 변수에 할당된다. 즉, 이 변수(obj)에 대해 함수를 실행하면 전역이 아닌 해당 객체가 this와 바인딩되는 규칙을 따른다.
+
+**우선순위: New 바인딩 > 명시적 바인딩(내장함수) > 암시적 바인딩(객체 메서드) > 전역**
+<br />
+
+## 실행 컨텍스트
+Javascript가 코드들을 실행하기 위해 일종의 블록으로 나누고, 코드블록엔 변수, 함수, this, arguments 등 정보가 담긴다.<br />
+실행가능한 코드를 추상화한 환경을 실행 컨텍스트라고 한다. 실행 컨텍스트는 Global, 함수, eval 3가지 경우에 생성되며, 콜스택에 쌓인다.
+
+### ES6의 실행 컨텍스트
+ES5까지는 변수객체, scope체인, this바인딩 으로 구성된 실행 컨텍스트를 채택했으나, ES6부터는 구성요소가 달라졌다.<br />
+![image](https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/d8082f84-d169-40e2-a1d9-bc26efb75a81)
+1. Lexical Environment : Environment Records(let/const 변수, 함수 관련값들을 추적), scope(Outer Reference Environment), this 바인딩 등으로 구성된다.
+2. Variable Environment : LE와 동일하되 var 변수를 핸들링한다. var는 functional scope이며, 변수 초기선언이 달라서 별도 환경에 존재한다.
