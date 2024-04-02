@@ -62,6 +62,7 @@ console.log(typeof myName); // > "string"
 console.log(typeof yourName); // > "function"
 ```
 <br />
+<br />
 
 ## Javascript 엔진
 자바스크립트 엔진은 자바스크립트 코드를 해석하고 실행하는 인터프리터이다. 브라우저마다 다른 엔진을 사용한다.
@@ -93,6 +94,7 @@ console.log(typeof yourName); // > "function"
 자바스크립트 런타임은 콜백큐를 가지고 있다. 이는 처리할 메세지 목록과 실행할 콜백함수들의 리스트이다.<br />
 Web API 들이 콜스택에 올라오면, background를 통해 제어된 다음 내부의 로직(혹은 콜백함수)을 이벤트 큐로 이동시킨다. 이후, 콜스택이 빌 때 이 로직들이 인입되어 실행되는 것이다!<br />
 [https://velog.io/@ru_bryunak/자바스크립트-기초-1](https://velog.io/@ru_bryunak/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88-1)
+<br />
 <br />
 
 ## Prototype
@@ -135,6 +137,7 @@ Arrow Function은 ES6에 새로 추가된 문법으로, 비교적 간단하게 �
 - 이벤트 리스너의 콜백함수로 사용하면 this가 상위 컨텍스트(window)를 가리킴
 - 생성자 함수로 사용할 수 없다. (prototype 이 없음)
 <br />
+<br />
 
 ## Closure(클로저)
 클로저는 함수가 선언될 때 속한 렉시컬 스코프(Lexical Environment)를 기억하여, 스코프 밖에서 실행될 때도 이 스코프에 접근할 수 있게 해주는 기능이다.
@@ -163,6 +166,7 @@ myFunc(); // 'Hello World'
 
 ### Closure 주의점
 메모리 측면에서 손해(내부함수가 외부함수를 참조중이어서, GC로 메모리가 해제되지 않음) => 클로저를 할당한 변수에 null을 할당하여 해제
+<br />
 <br />
 
 ## This 바인딩
