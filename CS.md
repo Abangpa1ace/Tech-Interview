@@ -1,6 +1,6 @@
 # CS
-[객체 지향 프로그래밍](#OOP(객체-지향-프로그래밍))<br />
-[HTTP, HTTPS](#HTTP,-HTTPS)<br />
+[객체 지향 프로그래밍](#%EF%B8%8F-OOP(객체-지향-프로그래밍))<br />
+[HTTP, HTTPS](#%EF%B8%8F-HTTP,-HTTPS)<br />
 <br />
 **좋은글** <br />
 - [웹 페이지 로딩 과정](https://velog.io/@bebrain/%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A1%9C%EB%94%A9-%EA%B3%BC%EC%A0%95)
