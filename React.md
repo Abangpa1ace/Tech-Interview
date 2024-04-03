@@ -6,6 +6,10 @@
 [Babel, Webpack](#Babel,-Webpack)<br />
 <br />
 
+**좋은글**<br />
+- [React 렌더링](https://www.nextree.io/riaegteu-rendeoring-mic-coejeoghwa/)
+<br />
+
 ## JSX
 JSX(Javascript eXtension) 은 자바스크립트의 확장문법이다. React는 HTML 요소를 표현하기 위해 JSX를 사용한다.<br />
 마크업 언어처럼 보이나, 말 그대로 JSX는 Javascript 다. (Build 시, Babel에 의해 JS로 변환됨) 기본적으론 마크업 문법으로 작성할 수 있으며, 추가적인 문법이나 반드시 준수해야 할 주의점이 있다!<br />
@@ -39,9 +43,10 @@ Effect 함수가 반환하는 함수를 clean-up 함수라고 하며 언마운�
 <br />
 
 ## key 사용이유
-반복적인 엘리먼트에 안정적인 고유성 부여
-- 순회적으로 렌더링을 처리하는데, 추가/수정/제거/순서변경 시 해당 포인트부터 리렌더링이 시작되므로 비효율적
-- index를 키값으로 부여하면, 수정이 일어났을 때 key를 기준으로는 변경이 없다고 고려하여 리렌더링을 유발하지 않는다
+반복적인 렌더링에서, 아이템 컴포넌트에 고유성을 부여해서 재조정(Reconciliation) 최적화
+- key가 없으면 모든 아이템이 리렌더링 될 수 있음
+- key를 인덱스 등 고유하지 않은 값을 사용하면, 의도치 않은 효과 발생가능(리스트 수정, 삭제, 중간삽입 등)
+- 리스트 데이터가 변경 가능성이 없거나, 정적이거나, 내부에 상태값이 없다면 key가 반드시 필요하지 않음
 <br />
 
 ## Babel, Webpack
@@ -76,11 +81,11 @@ ES5 지원, 이미지 압축, 최소화 등 여러가지 기능들도 제공한�
 React는 단방향 데이터 바인딩 방식을 채택한다. 
 **데이터 바인딩이란?** 두 데이터 혹은 정보의 소스를 일치시키는 기법. 즉, 화면의 데이터와 브라우저 메모리의 데이터를 일치시키는 기법이다.
 
-**[양방향 바인딩]**
-![image](https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/70e5fe9a-2bc4-40c4-93d2-608f9c37d8c2)
+**[양방향 바인딩]** <br />
+<img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/70e5fe9a-2bc4-40c4-93d2-608f9c37d8c2" width="400" />
 Vue, Angular 는 양방향 바인딩을 채택한다. UI 및 JS 양쪽의 Watcher가 데이터를 동기화시켜주는 것이다. 이외 부가적인 로직이 불필요한 장점이 있지만, 데이터가 많아지면 Watcher도 증가하여 성능저하의 단점이 있다.
 <br />
 
-**[단방향 바인딩]**
-![image](https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/024b6582-294d-410a-8f7c-9ccc4b9ea32b)
+**[단방향 바인딩]** <br />
+<img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/024b6582-294d-410a-8f7c-9ccc4b9ea32b" width="400" />
 React는 단방향 바인딩을 채택한다. 하나의 Watcher가 JS 데이터 갱신을 감지하여 UI를 업데이트한다. 반대로, 사용자가 상태값(혹은 JS)을 업데이트하기 위해선 Event를 통해 갱신해야 한다.
