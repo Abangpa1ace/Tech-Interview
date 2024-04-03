@@ -2,8 +2,11 @@
 [객체 지향 프로그래밍](#OOP(객체-지향-프로그래밍))<br />
 [HTTP, HTTPS](#HTTP,-HTTPS)<br />
 <br />
+**좋은글** <br />
+- [웹 페이지 로딩 과정](https://velog.io/@bebrain/%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A1%9C%EB%94%A9-%EA%B3%BC%EC%A0%95)
+<br />
 
-## OOP(객체 지향 프로그래밍)
+## ✏️ OOP(객체 지향 프로그래밍)
 필요한 데이터를 추상화하여 속성(attributes)과 행위(methods)를 가진 객체를 만들고, 객체 간 유기적인 상호작용을 통해 로직을 구성하는 프로그래밍 패러다임
 
 ### 4가지 특징
@@ -24,7 +27,7 @@
 <br />
 <br />
 
-## HTTP, HTTPS
+## ✏️ HTTP, HTTPS
 HTTP(Hyper Text Transfer Protocoal)는 서버-클라이언트 모델을 따라 데이터를 주고 받기 위한 프로토콜이다.
 애플리케이션 레벨의 프로토콜로 TCP/IP 위에서 작동한다. 비상태성/비연결성이 특징이며 Method, Path, Version, Headers, Body 등으로 구성된다.
 하지만, 암호화되지 않은 평문을 전송하기에, 민감한 정보를 다루기 위해 HTTPS가 등장하였다.
