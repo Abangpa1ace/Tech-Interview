@@ -1,10 +1,10 @@
 # React
 [JSX](#✏️-JSX)<br />
-[Virtual Dom](#V✏️-irtual-Dom)<br />
-[useEffect](#✏️-useEffect)<br />
-[key 사용이유](#✏️-key-사용이유)<br />
-[Babel, Webpack](#✏️-Babel,-Webpack)<br />
-[Suspense 원리](#✏️-Suspense-원리)<br />
+[Virtual Dom](#Virtual-Dom)<br />
+[useEffect](#useEffect)<br />
+[key 사용이유](#key-사용이유)<br />
+[Babel, Webpack](#Babel,-Webpack)<br />
+[Suspense 원리](#Suspense-원리)<br />
 <br />
 
 **좋은글**<br />
