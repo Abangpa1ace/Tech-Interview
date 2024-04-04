@@ -51,4 +51,14 @@ HTTP 데이터에 암호화가 추가된 프로토콜. (HTTP는 80, HTTPS는 443
 <br />
 HTTPS는 HTTP에 암호화가 추가된 만큼, 상대적으로 느리며(차이는 적음) 인증서 발급/유지를 위한 추가비용이 발생한다.
 <br />
+
+### HTTP 1.0 vs 1.1 vs 2.0 vs 3.0
+<img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/3f920597-0008-458b-bf60-1e12f38148cd" width="500" />
+
+- 초기(0.9) : GET만 가능
+- 1.0 : Header 추가, HTTP 버전명시, status code, Content-type, 새 메서드(POST, HEAD)
+- 1.1 : 비연결성을 Single Connection으로 효율화, 새 메서드(PUT, PATCH, DELETE, CONNECT, TRACE, OPTIONS)
+- 2.0 : 복수 요청, 응답 우선순위, 요청/응답 자동압축, 연결 리프래시, 서버 푸시(다수요청 방지)
+- 3.0 : QUIC(Quick UDP Internet Connections, 빠른 핸드 셰이킹)
+
 <br />
