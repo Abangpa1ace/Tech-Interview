@@ -1,11 +1,21 @@
 # Javascript
-[Hoisting](#Hoisting)<br />
-[Javascript 엔진](#Javascript-엔진)<br />
-[비동기 프로그래밍](#비동기-프로그래밍)<br />
-[Prototype](#Prototype)<br />
-[Arrow Function(화살표 함수)](#Arrow-Function(화살표-함수))<br />
-[Closure(클로저)](#Closure(클로저))<br />
-[this 바인딩](#this-바인딩)<br />
+[var, let, const](#%EF%B8%8F-var,-let,-const)<br />
+[Hoisting](#%EF%B8%8F-Hoisting)<br />
+[Javascript 엔진](#%EF%B8%8F-Javascript-엔진)<br />
+[비동기 프로그래밍](#%EF%B8%8F-비동기-프로그래밍)<br />
+[Prototype](#%EF%B8%8F-Prototype)<br />
+[Arrow Function(화살표 함수)](#%EF%B8%8F-Arrow-Function(화살표-함수))<br />
+[Closure(클로저)](#%EF%B8%8F-Closure(클로저))<br />
+[this 바인딩](#%EF%B8%8F-this-바인딩)<br />
+<br />
+
+## ✏️ var, let, const
+var는 ES5까지, let/const는 ES6에 등장한 변수선언 키워드다.
+1. var는 함수레벨 스코프, let/const는 블록레벨 스코프
+2. var는 선언+초기화 호이스팅, let/const는 선언만 호이스팅(TDZ)
+3. var는 재선언 가능, let/const는 재선언 불가능
+4. var와 let은 재할당 가능, const는 재할당 불가능
+5. (strict mode가 아닌 경우) 전역 스코프에서 var만 window에 바인딩
 <br />
 
 ## ✏️ Hoisting
