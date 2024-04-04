@@ -1,14 +1,14 @@
 # Javascript
 [Hoisting](#Hoisting)<br />
 [Javascript 엔진](#Javascript-엔진)<br />
-
+[비동기 프로그래밍](#비동기-프로그래밍)<br />
 [Prototype](#Prototype)<br />
 [Arrow Function(화살표 함수)](#Arrow-Function(화살표-함수))<br />
 [Closure(클로저)](#Closure(클로저))<br />
 [this 바인딩](#this-바인딩)<br />
 <br />
 
-## Hoisting
+## ✏️ Hoisting
 Javascript에서 호이스팅은 코드에 선언된 **변수(var) 및 함수 선언문이 해당 스코프의 최상단**으로 끌어올려지는 것이다. (함수범위 혹은 전역범위)
 컴파일러는 자바스크립트 엔진이 인터프리팅(interpreting) 하기 전에 컴파일을 하는데, 이 때 호이스팅이 발생하는 것이다.
 
@@ -65,7 +65,7 @@ console.log(typeof yourName); // > "function"
 <br />
 <br />
 
-## Javascript 엔진
+## ✏️ Javascript 엔진
 자바스크립트 엔진은 자바스크립트 코드를 해석하고 실행하는 인터프리터이다. 브라우저마다 다른 엔진을 사용한다.
 - `V8` : 크롬, Node.js
 - `SpiderMonkey` : 파이어폭스
@@ -98,7 +98,7 @@ Web API 들이 콜스택에 올라오면, background를 통해 제어된 다음 
 <br />
 <br />
 
-## 비동기 프로그래밍
+## ✏️ 비동기 프로그래밍
 Javascript는 싱글 스레드로 한 번에 하나의 작업만 수행 가능하다. 이 떄, 연산량이 높은 작업으로 다음 작업이 지연되는 것을 방지하기 위해 JS는 비동기(Asynchronous) 개념을 제공한다.
 
 ### 비동기 원리
@@ -119,7 +119,7 @@ Javascript는 싱글 스레드로 한 번에 하나의 작업만 수행 가능�
 <br />
 <br />
 
-## Prototype
+## ✏️ Prototype
 **Javascript는 프로토타입 기반 객체지향 언어**이다. 이는, 원형 객체를 복제하여 새로운 객체를 생성하는 원리이다. 다만, 자바스크립트는 실제 복제를 하지 않고 프로토타입 링크(__proto__) 를 통해 원형을 참조한다.
 * C, Java는 클래스 기반 객체지향 언어. 클래스라는 추상화된 개념을 상속한 새로운 객체(인스턴스)로 생성하는 원리
 
@@ -161,7 +161,7 @@ Arrow Function은 ES6에 새로 추가된 문법으로, 비교적 간단하게 �
 <br />
 <br />
 
-## Closure(클로저)
+## ✏️ Closure(클로저)
 클로저는 함수가 선언될 때 속한 렉시컬 스코프(Lexical Environment)를 기억하여, 스코프 밖에서 실행될 때도 이 스코프에 접근할 수 있게 해주는 기능이다.
 ```
 function sayHello () {
@@ -268,7 +268,7 @@ obj.hello(); // "chris"
 **우선순위: New 바인딩 > 명시적 바인딩(내장함수) > 암시적 바인딩(객체 메서드) > 전역**
 <br />
 
-## 실행 컨텍스트
+## ✏️ 실행 컨텍스트
 Javascript가 코드들을 실행하기 위해 일종의 블록으로 나누고, 코드블록엔 변수, 함수, this, arguments 등 정보가 담긴다.<br />
 실행가능한 코드를 추상화한 환경을 실행 컨텍스트라고 한다. 실행 컨텍스트는 Global, 함수, eval 3가지 경우에 생성되며, 콜스택에 쌓인다.
 
