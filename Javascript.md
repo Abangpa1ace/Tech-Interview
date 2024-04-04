@@ -1,6 +1,7 @@
 # Javascript
 [Hoisting](#Hoisting)<br />
 [Javascript 엔진](#Javascript-엔진)<br />
+
 [Prototype](#Prototype)<br />
 [Arrow Function(화살표 함수)](#Arrow-Function(화살표-함수))<br />
 [Closure(클로저)](#Closure(클로저))<br />
@@ -94,6 +95,27 @@ console.log(typeof yourName); // > "function"
 자바스크립트 런타임은 콜백큐를 가지고 있다. 이는 처리할 메세지 목록과 실행할 콜백함수들의 리스트이다.<br />
 Web API 들이 콜스택에 올라오면, background를 통해 제어된 다음 내부의 로직(혹은 콜백함수)을 이벤트 큐로 이동시킨다. 이후, 콜스택이 빌 때 이 로직들이 인입되어 실행되는 것이다!<br />
 [https://velog.io/@ru_bryunak/자바스크립트-기초-1](https://velog.io/@ru_bryunak/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88-1)
+<br />
+<br />
+
+## 비동기 프로그래밍
+Javascript는 싱글 스레드로 한 번에 하나의 작업만 수행 가능하다. 이 떄, 연산량이 높은 작업으로 다음 작업이 지연되는 것을 방지하기 위해 JS는 비동기(Asynchronous) 개념을 제공한다.
+
+### 비동기 원리
+<img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/e3346c51-a1d6-4bd8-947a-52619b828d4b" width="500" />
+
+1. 콜스택 작업을 실행하던 중 비동기 함수를 만난다. (fetch, setTimeout, ajax, eventListener 등)
+2. Web APIs에 비동기를 위임하고 다음 작업을 지속한다. Web APIs는 멀티 스레드로, 백그라운드에서 작업을 처리한다.
+3. 백그라운드 작업이 완료되면 이후의 콜백함수를 콜백큐에 넣는다. 이벤트 루프에서 콜스택이 비어있다면 콜백큐로부터 작업을 가져와 실행한다.
+<br />
+
+### 비동기 스케줄링
+한 작업을 비동기 처리했다고 가정했을 때, 다음 작업이 그 결과값을 요구한다면 문제가 생긴다. 이 때문에, 비동기 스케줄링 기법들이 등장하게 된 것이다.
+1. 콜백함수(Callback Function) : 특정 시점에 호출하는 함수. JS에서의 1급함수 성질을 활용해, 함수를 매개변수를 받아 이를 비동기 작업 이후 실행
+2. Promise 객체 : Javascript 비동기 전용 객체. 비동기 결과값뿐만 아니라, 상태 및 성공/실패 여부를 제공해 깔끔한 체이닝이 가능
+   - Promise 상태 : pending, fulfilled, rejected, settled
+   - Promise 메서드 : then, catch, finally, all, race, resolve, reject 등
+3. async/await : Promise 체이닝에서 가독성을 높인 문법. async 함수는 Promise를 반환하며, 내부 await 키워드는 Promise가 resolve 될 때까지 대기 후 실행된다.
 <br />
 <br />
 
