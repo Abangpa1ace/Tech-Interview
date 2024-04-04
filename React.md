@@ -9,6 +9,7 @@
 
 **좋은글**<br />
 - [React 렌더링](https://www.nextree.io/riaegteu-rendeoring-mic-coejeoghwa/)
+- [동시성 렌더링과 Fiber](https://blog.mathpresso.com/react-deep-dive-fiber-88860f6edbd0)
 <br />
 
 ## ✏️ JSX
