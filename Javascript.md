@@ -152,8 +152,9 @@ Javascript 에서 원시타입 값을 제외한 모든 타입은 객체이다. �
 
 [https://abangpa1ace.tistory.com/104?category=910462](https://abangpa1ace.tistory.com/104?category=910462)https://abangpa1ace.tistory.com/104?category=910462
 <br />
+<br />
 
-### Arrow Function(화살표 함수)
+## Arrow Function(화살표 함수)
 Arrow Function은 ES6에 새로 추가된 문법으로, 비교적 간단하게 함수를 선언할 수 있다. 무조건 익명이므로, 함수를 호출하기 위해선 함수 표현식으로 변수에 저장해야한다.
 ```
 (x, y) => x + y  // = const foo = function(x,y) { return x + y; };
