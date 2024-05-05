@@ -7,6 +7,8 @@
 [Arrow Function(화살표 함수)](#%EF%B8%8F-Arrow-Function(화살표-함수))<br />
 [Closure(클로저)](#%EF%B8%8F-Closure(클로저))<br />
 [this 바인딩](#%EF%B8%8F-this-바인딩)<br />
+[실행 컨텍스트](#%EF%B8%8F-실행-컨텍스트)<br />
+[함수 Composition](#%EF%B8%8F-함수-Composition)<br />
 <br />
 
 ## ✏️ var, let, const
@@ -288,3 +290,28 @@ ES5까지는 변수객체, scope체인, this바인딩 으로 구성된 실행 �
 ![image](https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/d8082f84-d169-40e2-a1d9-bc26efb75a81)
 1. Lexical Environment : Environment Records(let/const 변수, 함수 관련값들을 추적), scope(Outer Reference Environment), this 바인딩 등으로 구성된다.
 2. Variable Environment : LE와 동일하되 var 변수를 핸들링한다. var는 functional scope이며, 변수 초기선언이 달라서 별도 환경에 존재한다.
+<br />
+
+## ✏️ 함수 Composition
+함수들을 조합하여 새로운 함수를 만드는 것. 함수를 겹겹이 실행하거나, 메서드 체이닝, 혹은 아래처럼 직접 구현할 수 있다.
+```
+const pipe = (...funcs) => (initialVal) => funcs.reduce((val, fn) => fn(val), initialVal);
+```
+### 커링(Currying)
+고차함수에 기반한 프로그래밍 기법. 여러 인수를 받는 함수를, 각각의 인수를 받는 함수들로 나누는 방법입니다.<br />
+기능이 복잡한 함수형 프로그래밍에서, 이 비용을 분할하며 재사용성을 강화하기 위해 사용되는 기법입니다.
+```
+// 기본함수
+function add (a, b) {
+  return a + b;
+}
+
+// 커링된 함수
+var add = function(x) {
+  return function(y) { 
+    return x + y
+  };
+};
+
+var addTen = add(10);
+```
