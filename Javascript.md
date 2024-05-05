@@ -296,6 +296,8 @@ ES5까지는 변수객체, scope체인, this바인딩 으로 구성된 실행 �
 ```
 const pipe = (...funcs) => (initialVal) => funcs.reduce((val, fn) => fn(val), initialVal);
 ```
+<br />
+
 ### 커링(Currying)
 고차함수에 기반한 프로그래밍 기법. 여러 인수를 받는 함수를, 각각의 인수를 받는 함수들로 나누는 방법입니다.<br />
 기능이 복잡한 함수형 프로그래밍에서, 이 비용을 분할하며 재사용성을 강화하기 위해 사용되는 기법입니다.
