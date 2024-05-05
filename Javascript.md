@@ -85,7 +85,7 @@ console.log(typeof yourName); // > "function"
 - `Webkit` : 사파리
 
 ### 자바스크립트 엔진 구조(런타임)
-![image](https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/062d1ebc-3564-4dbd-b7f7-d4385e67a98a)
+<img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/062d1ebc-3564-4dbd-b7f7-d4385e67a98a" width="600" /><br />
 - `Memory Heap` : 참조타입(배열, 객체, 함수선언) 값이 무작위로 저장되는 곳
 - `Call Stack`: 함수 호출 시 **실행 컨텍스트 스택**이 쌓이는 곳, 원시타입 값도 저장
 - `Callback Queue(Event Queue)` : setTimeout 과 같은 비동기 콜백이 저장되는 메모리
@@ -103,7 +103,7 @@ console.log(typeof yourName); // > "function"
 <br />
 
 ### Event Queue(이벤트 큐, Callback Queue)
-![image](https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/c859bb84-5c16-4dbd-b186-b8dce51da7a6)
+<img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/c859bb84-5c16-4dbd-b186-b8dce51da7a6" width="600" /><br />
 자바스크립트 런타임은 콜백큐를 가지고 있다. 이는 처리할 메세지 목록과 실행할 콜백함수들의 리스트이다.<br />
 Web API 들이 콜스택에 올라오면, background를 통해 제어된 다음 내부의 로직(혹은 콜백함수)을 이벤트 큐로 이동시킨다. 이후, 콜스택이 빌 때 이 로직들이 인입되어 실행되는 것이다!<br />
 [https://velog.io/@ru_bryunak/자바스크립트-기초-1](https://velog.io/@ru_bryunak/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B8%B0%EC%B4%88-1)
@@ -115,7 +115,6 @@ Javascript는 싱글 스레드로 한 번에 하나의 작업만 수행 가능�
 
 ### 비동기 원리
 <img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/e3346c51-a1d6-4bd8-947a-52619b828d4b" width="500" />
-
 1. 콜스택 작업을 실행하던 중 비동기 함수를 만난다. (fetch, setTimeout, ajax, eventListener 등)
 2. Web APIs에 비동기를 위임하고 다음 작업을 지속한다. Web APIs는 멀티 스레드로, 백그라운드에서 작업을 처리한다.
 3. 백그라운드 작업이 완료되면 이후의 콜백함수를 콜백큐에 넣는다. 이벤트 루프에서 콜스택이 비어있다면 콜백큐로부터 작업을 가져와 실행한다.
@@ -136,11 +135,11 @@ Javascript는 싱글 스레드로 한 번에 하나의 작업만 수행 가능�
 * C, Java는 클래스 기반 객체지향 언어. 클래스라는 추상화된 개념을 상속한 새로운 객체(인스턴스)로 생성하는 원리
 
 ### 프로토타입 링크
-![image](https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/d9a7c16e-8c2b-4fdd-a1e4-0ab10fc064ce)
+<img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/d9a7c16e-8c2b-4fdd-a1e4-0ab10fc064ce" width="600" /><br />
 Javascript 에서 원시타입 값을 제외한 모든 타입은 객체이다. 그렇기에, 모든 객체는 원형 객체 및 이에 대한 링크(__proto__)를 가지며, 이를 타고 올라가면 Object() 에 도달하는데 이것이 프로토타입 링크이다.
 
 ### 주요 속성
-![image](https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/c5518969-3f15-47b8-ab49-4106031ececc)
+<img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/c5518969-3f15-47b8-ab49-4106031ececc" width="600" /><br />
 
 **1. Prototype Object**
 자바스크립트에서 객체는 항상 함수로만 생성된다. 이 함수는, 생성자(Constructor) 자격을 가지며 new 키워드로 객체를 만들어낼 수 있다.
