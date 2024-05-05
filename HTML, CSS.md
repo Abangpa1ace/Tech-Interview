@@ -13,7 +13,7 @@
 
 ## ✏️ \<canvas\>의 CORS
 ### 보안과 오염된 캔버스
-<img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/061a225c-cfeb-4458-855a-451f5b00e798" width="200" />
+<img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/061a225c-cfeb-4458-855a-451f5b00e798" width="400" /><br />
 캔버스의 비트맵 픽셀은 다른 호스트에서 불러온 이미지나 비디오 등 소스를 불러올 경우 보안문제를 야기할 수 있다.(CORS)
 CORS 승인 없이 리소스를 그릴 경우 캔버스는 오염되고(tainted), 캔버스 컨텐츠를 읽으려고 시도하면 CORS 에러를 발생시킨다.
 - 외부 컨텐츠를 \<img\>, \<svg\> 등으로 표현한 엘리먼트를 직접 검색하려는 경우
@@ -24,6 +24,6 @@ CORS 승인 없이 리소스를 그릴 경우 캔버스는 오염되고(tainted)
 ### 해결방법
 아래 다양한 방법으로 CORS를 해결하거나 우회할 수 있으며, 상황에 맞는 방식을 채택한다.
 - img의 crossOrigin 속성을 'anonymous'로 설정
-- AWS 어셋인 경우, S3 버킷 권한수정 혹은 Cloudfront CORS 설정
+- AWS 어셋인 경우, S3 버킷 권한수정(Cache-Control) 혹은 Cloudfront CORS 설정
 - React 등 라이브러리 경우, 이미지 Proxy 서버 설정
 - 이미지 src를 base64 링크로 변환
