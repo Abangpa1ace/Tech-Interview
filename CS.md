@@ -1,5 +1,6 @@
 # CS
 [객체 지향 프로그래밍](#%EF%B8%8F-OOP(객체-지향-프로그래밍))<br />
+[Cookie, Session, Storage](#%EF%B8%8F-Cookie,-Session,-Storage)<br />
 [HTTP, HTTPS](#%EF%B8%8F-HTTP,-HTTPS)<br />
 <br />
 **좋은글** <br />
@@ -26,6 +27,9 @@
    - 객체가 많아짐에 따라 용량 커짐
 <br />
 <br />
+## ✏️ Cookie, Session, Storage
+쿠키와 세션은 HTTP의 비연결성, Stateless 한 특징을 보완하기 위해 데이터를 유지하기 위한 수단들이다.
+- Cookie(쿠키) : 
 
 ## ✏️ HTTP, HTTPS
 HTTP(Hyper Text Transfer Protocoal)는 서버-클라이언트 모델을 따라 데이터를 주고 받기 위한 프로토콜이다.
