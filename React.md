@@ -5,6 +5,7 @@
 [key 사용이유](#%EF%B8%8F-key-사용이유)<br />
 [Babel, Webpack](#%EF%B8%8F-Babel,-Webpack)<br />
 [Suspense 원리](#%EF%B8%8F-Suspense-원리)<br />
+[Infinite Scroll 최적화](#%EF%B8%8F-Infinite-Scroll-최적화)<br />
 <br />
 
 **좋은글**<br />
@@ -78,6 +79,13 @@ ES5 지원, 이미지 압축, 최소화 등 여러가지 기능들도 제공한�
 ## ✏️ Suspense 원리
 컴포넌트 렌더링에 필요한 대기 기능을 제공(fallback UI). 기존엔 Lazy Loading을 위한 실험적 기능이었으나, v18 정식출시 이후론 코드 스플리팅 목적뿐만 아니라 패칭 등 다양한 케이스를 대응한다. 
 - 원리 : **Promise를 throw하여 상위에 비동기를 위임.** 감싸진 컴포넌트를 runPureTask 로직으로 구독하며, pending(throw Promise) / success(return result) / error(throw error)를 반환
+<br />
+
+## ✏️ Infinite Scroll 최적화
+수백, 수천개의 컨텐츠를 표현한 경우 DOM이 그만큼 많아지면서 부하가 생기고, 스크롤/리사이징 시 버벅임 현상도 발생하게 된다.<br />
+- Scroll Event(Throttle) 보다는 Intersection Observer API를 활용한다.
+- 보이는 영역의 DOM만 표현한다. Scroll 값 혹은 컨테이너 order 등을 저장하고, 해당 인덱스 주변의 DOM 위주로 표현한다.
+- 스크롤이 유지되어야 하므로, 이외는 가상 컴포넌트로 대체한다. (react-virtualized, react-window 등)
 <br />
 
 ## ✏️ 단방향 데이터 바인딩
