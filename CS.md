@@ -27,9 +27,23 @@
    - 객체가 많아짐에 따라 용량 커짐
 <br />
 <br />
+
 ## ✏️ Cookie, Session, Storage
 쿠키와 세션은 HTTP의 비연결성, Stateless 한 특징을 보완하기 위해 데이터를 유지하기 위한 수단들이다.
-- Cookie(쿠키) : 
+- Cookie(쿠키) : 클라이언트(PC)에 저장. 문자열(text) 자료형이며, 웹서버가 자료 자체를 set-cookie로 반환.<br />
+쿠키당 4KB 용량제한, 도메인(20개) 및 전체(300개) 개수제한. 만료일(라이프사이클)을 설정할 수 있고, HTTP 통신과 연계하기 좋음.
+- Session(세션) : 서버에 저장. 객체(Object) 자료형이며, 웹서버가 sessionId로 저장하고 이를 set-cookie로 반환.<br />
+서버용량에 따라 제약은 없으며, 보안성이 우수함. 기한설정이 가능하나 기본적으론 브라우저 종료시 삭제됨.
+<br />
+
+웹 스토리지는 서버와 의존성없이 클라이언트에 저장하기 위해 HTML5에 추가된 기능이다. 용량이 크고(모바일 2.5MB, 웹 5~10MB), 다양한 JS자료형을 다룰 수 있는 장점이 있다.
+- 로컬 스토리지(localStorage)
+- 세션 스토리지(sessionStorage)
+<br />
+
+웹 스토리지는 localStorage에 접근하는 코드로 인한 XSS에 취약하며, 쿠키는 httpOnly 옵션으로 대응이 되나 CSRF엔 취약할 수 있다.
+<br />
+<br />
 
 ## ✏️ HTTP, HTTPS
 HTTP(Hyper Text Transfer Protocoal)는 서버-클라이언트 모델을 따라 데이터를 주고 받기 위한 프로토콜이다.
