@@ -6,6 +6,7 @@
 [Prototype](#%EF%B8%8F-Prototype)<br />
 [Arrow Function(화살표 함수)](#%EF%B8%8F-Arrow-Function(화살표-함수))<br />
 [Closure(클로저)](#%EF%B8%8F-Closure(클로저))<br />
+[Garbage Collection(가비지 컬렉션)](#%EF%B8%8F-Garbage-Collection(가비지-컬렉션))<br />
 [this 바인딩](#%EF%B8%8F-this-바인딩)<br />
 [실행 컨텍스트](#%EF%B8%8F-실행-컨텍스트)<br />
 [함수 Composition](#%EF%B8%8F-함수-Composition)<br />
@@ -200,6 +201,11 @@ myFunc(); // 'Hello World'
 
 ### Closure 주의점
 메모리 측면에서 손해(내부함수가 외부함수를 참조중이어서, GC로 메모리가 해제되지 않음) => 클로저를 할당한 변수에 null을 할당하여 해제
+<br />
+<br />
+
+## ✏️ Garbage Collection(가비지 컬렉션)
+https://fe-developers.kakaoent.com/2022/220519-garbage-collection/
 <br />
 <br />
 
