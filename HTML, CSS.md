@@ -1,6 +1,7 @@
 # HTML & CSS
 [\<svg\>와 \<canvas\>](#%EF%B8%8F-\<svg\>와-\<canvas\>)<br />
 [\<canvas\>의 CORS](#%EF%B8%8F-\<canvas\>의-CORS)<br />
+[\<picture\> 태그와 반응형 이미지](#%EF%B8%8F-\<picture\>-태그와-반응형-이미지)<br />
 <br />
 
 ## ✏️ \<svg\>와 \<canvas\>
@@ -27,3 +28,12 @@ CORS 승인 없이 리소스를 그릴 경우 캔버스는 오염되고(tainted)
 - AWS 어셋인 경우, S3 버킷 권한수정(Cache-Control) 혹은 Cloudfront CORS 설정
 - React 등 라이브러리 경우, 이미지 Proxy 서버 설정
 - 이미지 src를 base64 링크로 변환
+<br />
+
+## ✏️ \<picture\> 태그와 반응형 이미지
+HTML의 \<picture\>, \<source\> 태그는 다양한 이미지 소스를 화면크기에 따라 최적화하고, 이미지 확장자를 적절히 적용할 때 사용된다.
+- picture : 하나의 img 태그에 여러 개의 반응형 이미지를 제공하는, 0개 이상의 source 태그가 포함된 부모 요소
+- source : picture 태그 내에서 반응형 이미지 소스를 설정하는 요소. srcset(리소스), media(반응형 조건), type(이미지 타입)
+
+\* 이미지 최적화 : https://velog.io/@hustle-dev/%EC%9B%B9-%EC%84%B1%EB%8A%A5%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%B5%9C%EC%A0%81%ED%99%94
+  
