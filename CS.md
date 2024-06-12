@@ -28,6 +28,25 @@
 <br />
 <br />
 
+## ✏️ 웹 리소스 로딩 최적화
+- HTML
+   - 인라인 스타일 최소화 : 리플로우 지속 유발
+   - 복잡한 DOM 트리 지양
+- CSS
+   - \<link\> 태그 HTML 최상단 배치 : CSSOM 트리는 CSS 코드를 모두 해석해야 구성되므로, HTML 최상단 배치
+   - reflow/repaint를 고려한 스타일 : 사이즈 지정, transform은 GPU에서 관장하므로 position과 달리 리플로우/리페인트 미발생
+   - CSS 간결한 셀렉터 사용 : 복잡하고 방대할수록 레이아웃을 그리는 시간이 길어짐
+- Javascript
+   - \<script\> 태그 HTML body 최하단 배치 : JS는 DOM, CSSOM 트리를 동적으로 변형하고 스크립트 완료 전까지 파싱 및 DOM 트리생성 중단되므로
+   - async/defer 병렬로드 : async(다운로드 후 즉시), defer(DOM트리 생성완료 후 실행)
+   - 웹팩 등 번들러 채택 : CSS, JS를 하나의 파일로 번들링하므로 요청 최소화
+- 미디어 : 이미지 등 미디어는 전체 페이지의 51%를 차지하므로 최적화 필요
+   - 이미지 스프라이트
+   - Lazy Loading과 picture 태그사용
+   - 아이콘 폰트 사용(Font Awesome)
+   - 이미지 포맷(webp/avif)
+   
+
 ## ✏️ Cookie, Session, Storage
 쿠키와 세션은 HTTP의 비연결성, Stateless 한 특징을 보완하기 위해 데이터를 유지하기 위한 수단들이다.
 - Cookie(쿠키) : 클라이언트(PC)에 저장. 문자열(text) 자료형이며, 웹서버가 자료 자체를 set-cookie로 반환.<br />
