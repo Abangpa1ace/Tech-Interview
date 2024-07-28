@@ -64,6 +64,10 @@
 <br />
 <br />
 
+## ✏️ 프로세스 & 스레드
+- 프로세스 : 정적인 파일(프로그램)이 실행된 동적상태의 인스턴스. 메모리에 올라가서 운영체제로부터 CPU자원(Code, Data, Stack, Heap)을 할당받은 작업(task)의 단위
+- 스레드 : 프로세스가 할당받은 자원을 활용하는 실행 흐름의 단위 (프로그램이 복잡해지므로 하나의 프로세스론 한계가 있음)
+
 ## ✏️ HTTP, HTTPS
 HTTP(Hyper Text Transfer Protocoal)는 서버-클라이언트 모델을 따라 데이터를 주고 받기 위한 프로토콜이다.
 애플리케이션 레벨의 프로토콜로 TCP/IP 위에서 작동한다. 비상태성/비연결성이 특징이며 Method, Path, Version, Headers, Body 등으로 구성된다.
@@ -77,7 +81,6 @@ HTTP 데이터에 암호화가 추가된 프로토콜. (HTTP는 80, HTTPS는 443
 <br />
 
 **HTTPS 동작과정**<br />
-
 <img src="https://github.com/Abangpa1ace/Tech-Interview/assets/67219914/ee220f11-ff97-40f7-b036-b4097400774d" width="500" />
 
 1. 클라이언트가 서버로 최초 연결 시도를 함
