@@ -45,7 +45,7 @@
    - Lazy Loading과 picture 태그사용
    - 아이콘 폰트 사용(Font Awesome)
    - 이미지 포맷(webp/avif)
-   
+<br />
 
 ## ✏️ Cookie, Session, Storage
 쿠키와 세션은 HTTP의 비연결성, Stateless 한 특징을 보완하기 위해 데이터를 유지하기 위한 수단들이다.
